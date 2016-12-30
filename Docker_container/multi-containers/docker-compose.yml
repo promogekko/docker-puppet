@@ -1,0 +1,18 @@
+puppet:
+        build: puppetmaster/
+        hostname: puppet
+
+agent1:
+        build: puppetslave/
+        hostname: agent1 
+        privileged: true
+        links:
+            - puppet:puppet
+
+agent2: 
+        build: puppetubu/
+        hostname: agent2
+        privileged: true
+        links:
+            - puppet:puppet
+
