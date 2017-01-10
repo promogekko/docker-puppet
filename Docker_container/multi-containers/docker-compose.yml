@@ -16,3 +16,9 @@ agent2:
         links:
             - puppet:puppet
 
+agent3:
+        build: puppetfed/
+        hostname: agent3
+        privileged: true
+        links:
+            - puppet:puppet
