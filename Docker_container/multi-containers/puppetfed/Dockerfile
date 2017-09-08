@@ -1,10 +1,9 @@
-FROM fedora:20
+FROM fedora:25
 
-MAINTAINER thijs.schnitger@container-solutions.com
+MAINTAINER dockerlite@gmail.com
 
-
-RUN rpm -ivh http://yum.puppetlabs.com/puppetlabs-release-fedora-20.noarch.rpm && \
-    yum -y install puppet hostname git unzip epel-release nano  && \
+RUN dnf install -y http://yum.puppetlabs.com/fedora/f25/PC1/x86_64/puppet-agent-1.10.7-1.fedoraf25.x86_64.rpm && \
+    yum -y install  hostname git unzip   && \
     yum clean all
 
 RUN export TERM=xterm
