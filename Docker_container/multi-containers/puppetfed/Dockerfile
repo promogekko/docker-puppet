@@ -1,9 +1,10 @@
-FROM fedora:25
+FROM fedora:21
 
 MAINTAINER dockerlite@gmail.com
 
-RUN dnf install -y http://yum.puppetlabs.com/fedora/f25/PC1/x86_64/puppet-agent-1.10.7-1.fedoraf25.x86_64.rpm && \
-    yum -y install  hostname git unzip   && \
+RUN yum -y install yum-plugin-ovl
+RUN yum -y update
+RUN yum  -y install puppet hostname git unzip wget   && \
     yum clean all
 
 RUN export TERM=xterm

@@ -10,5 +10,6 @@ RUN export TERM=xterm
 
 EXPOSE 8140
 
-CMD puppet master --verbose --no-daemonize
+ENTRYPOINT ["/sbin/init"]
+#CMD puppet master --verbose --no-daemonize
 
